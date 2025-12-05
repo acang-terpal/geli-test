@@ -1,8 +1,10 @@
 package service;
 
 import entity.EntityItem;
+import entity.EntityItemResponse;
 import helper.Helper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import repository.GeliItemRepo;
 
@@ -23,9 +25,9 @@ public class GeliItemService {
         this.helper = helper;
     }
 
-    public List<Map<String, Object>>  getItem(HashMap<String, Object> objParams) {
-        List<Map<String, Object>> entityItems = geliItemRepo.getItem(objParams.get("limit").toString(), objParams.get("offset").toString());
-        return entityItems;
+    public List<EntityItemResponse>  getItem(HashMap<String, Object> objParams) {
+        List<EntityItemResponse> listEntityItemResponse = geliItemRepo.getItem(PageRequest.of(Integer.parseInt(objParams.get("page").toString()), Integer.parseInt(objParams.get("size").toString())));
+        return listEntityItemResponse;
     }
 
 }
