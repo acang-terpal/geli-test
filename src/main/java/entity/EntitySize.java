@@ -11,9 +11,10 @@ import java.util.Set;
 @Entity
 @Table(name = "size")
 public class EntitySize {
+    @Getter @Setter
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "size_id", nullable = false)
+    @Column(name = "size_id", nullable = false, updatable = false)
     private Long sizeId;
 
     @Getter @Setter

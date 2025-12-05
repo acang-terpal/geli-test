@@ -11,9 +11,10 @@ import java.util.Set;
 @Entity
 @Table(name = "stock")
 public class EntityStock {
+    @Getter @Setter
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "stock_id", nullable = false)
+    @Column(name = "stock_id", nullable = false, updatable = false)
     private Long stockId;
 
     @Getter @Setter

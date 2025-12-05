@@ -9,9 +9,10 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "item")
 public class EntityItem {
+    @Getter @Setter
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "item_id", nullable = false)
+    @Column(name = "item_id", nullable = false, updatable = false)
     private Long itemId;
 
     @Getter @Setter

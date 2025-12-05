@@ -1,7 +1,9 @@
 package service;
 
+import entity.EntityColour;
 import entity.EntityColourResponse;
 import entity.EntityItem;
+import entity.EntityItemResponse;
 import helper.Helper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -30,4 +32,15 @@ public class GeliColourService {
         return listEntityColourResponse;
     }
 
+    public EntityColour getColourById(EntityColour entityColour) {
+        EntityColour entityColourResponse = geliColourRepo.getReferenceById(entityColour.getColourId());
+        return entityColourResponse;
+    }
+
+    public EntityColour createColour(HashMap objParams) {
+        EntityColour entityColour = new EntityColour();
+        entityColour.setValue(objParams.get("value").toString());
+        EntityColour savedEntity = geliColourRepo.save(entityColour);
+        return savedEntity;
+    }
 }

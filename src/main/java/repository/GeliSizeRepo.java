@@ -16,5 +16,4 @@ public interface GeliSizeRepo extends JpaRepository<EntitySize, Long> {
     @Query("SELECT new entity.EntitySizeResponse(a.sizeId, a.value) " +
             "FROM entity.EntitySize a ")
     List<EntitySizeResponse> getSize(Pageable pageable);
-
 }

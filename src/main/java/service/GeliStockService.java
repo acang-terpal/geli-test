@@ -1,6 +1,7 @@
 package service;
 
 import entity.EntityItem;
+import entity.EntityStock;
 import entity.EntityStockResponse;
 import helper.Helper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,4 +31,15 @@ public class GeliStockService {
         return entityStockList;
     }
 
+    public EntityStock getStockById(EntityStock entityStock) {
+        EntityStock entityStockResponse = geliStockRepo.getReferenceById(entityStock.getStockId());
+        return entityStockResponse;
+    }
+
+    public EntityStock createStock(HashMap objParams) {
+        EntityStock entityStock = new EntityStock();
+        entityStock.setValue(objParams.get("value").toString());
+        EntityStock entityStockResponse = geliStockRepo.save(entityStock);
+        return entityStockResponse;
+    }
 }

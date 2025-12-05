@@ -1,6 +1,7 @@
 package service;
 
 import entity.EntityItem;
+import entity.EntitySize;
 import entity.EntitySizeResponse;
 import helper.Helper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,4 +31,15 @@ public class GeliSizeService {
         return entitySizeList;
     }
 
+    public EntitySize getSizeById(EntitySize entitySize) {
+        EntitySize entitySizeResponse = geliSizeService.getReferenceById(entitySize.getSizeId());
+        return entitySizeResponse;
+    }
+
+    public EntitySize createSize(HashMap objParams) {
+        EntitySize entitySize = new EntitySize();
+        entitySize.setValue(objParams.get("value").toString());
+        entitySize = geliSizeService.save(entitySize);
+        return entitySize;
+    }
 }
