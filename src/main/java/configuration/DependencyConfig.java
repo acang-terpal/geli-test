@@ -1,7 +1,10 @@
 package configuration;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
+import net.sf.ehcache.Element;
 import net.sf.ehcache.config.DiskStoreConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,6 +17,9 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 @Configuration("dependencyConfig")
 @Scope("singleton")
@@ -47,6 +53,8 @@ public class DependencyConfig {
             //--------------------------ehcache save the config entity------------------------
             this.cache = new Cache(" GeliCacheApp", 1, false, true, 0, 0);
             cacheManager.addCache(this.cache);
+            HashMap<String, String> hashMapCart = new HashMap<>();
+            this.cache.put(new Element("cart", hashMapCart));
             //--------------------------get cache and put new element-------------------------------------
 //            this.cache = cacheManager.getCache(" GeliCacheApp");
 //            this.cache.put(new Element("config", Main.conf));

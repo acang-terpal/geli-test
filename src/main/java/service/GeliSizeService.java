@@ -1,18 +1,17 @@
 package service;
 
-import entity.EntityItem;
 import entity.EntitySize;
 import entity.EntitySizeResponse;
 import helper.Helper;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import repository.GeliItemRepo;
 import repository.GeliSizeRepo;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GeliSizeService {
@@ -31,15 +30,34 @@ public class GeliSizeService {
         return entitySizeList;
     }
 
-    public EntitySize getSizeById(EntitySize entitySize) {
-        EntitySize entitySizeResponse = geliSizeService.getReferenceById(entitySize.getSizeId());
+    public Optional<EntitySize> getSizeById(EntitySize entitySize) {
+        Optional<EntitySize> entitySizeResponse = geliSizeService.findById(entitySize.getSizeId());
         return entitySizeResponse;
     }
 
+    @Transactional
     public EntitySize createSize(HashMap objParams) {
         EntitySize entitySize = new EntitySize();
         entitySize.setValue(objParams.get("value").toString());
         entitySize = geliSizeService.save(entitySize);
         return entitySize;
+    }
+
+    @Transactional
+    public EntitySize updateSize(HashMap objParams) {
+        EntitySize entitySize = new EntitySize();
+        entitySize.setSizeId(Long.parseLong(objParams.get("sizeId").toString()));
+        entitySize.setValue(objParams.get("value").toString());
+        entitySize = geliSizeService.save(entitySize);
+        return entitySize;
+    }
+
+    @Transactional
+    public void deleteSize(HashMap objParams) {
+        try {
+            geliSizeService.deleteById(Long.parseLong(objParams.get("sizeId").toString()));
+        } catch (Exception ex){
+
+        }
     }
 }

@@ -3,6 +3,7 @@ package entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.dao.DataIntegrityViolationException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,5 +23,12 @@ public class EntityStock {
     private String value;
 
     @OneToMany(mappedBy = "stockId")
-    private List<EntityItem> entityItemSet = new ArrayList<>();;
+    private List<EntityItem> entityItemSet = new ArrayList<>();
+
+    @PreRemove
+    public void preventDeleteIfChildrenExist() {
+        if (entityItemSet != null && !entityItemSet.isEmpty()) {
+//            throw new DataIntegrityViolationException("Cannot delete Parent with existing Children.");
+        }
+    }
 }

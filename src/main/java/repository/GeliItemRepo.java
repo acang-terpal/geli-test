@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface GeliItemRepo extends JpaRepository<EntityItem, Long> {
@@ -26,5 +27,5 @@ public interface GeliItemRepo extends JpaRepository<EntityItem, Long> {
             "LEFT JOIN entity.EntityColour c on a.colourId = c.colourId " +
             "LEFT JOIN entity.EntityStock d on a.stockId = d.stockId " +
             "WHERE a.itemId = ?1 ")
-    EntityItemResponse getItemById(Long itemId);
+    Optional<EntityItemResponse> getItemById(Long itemId);
 }

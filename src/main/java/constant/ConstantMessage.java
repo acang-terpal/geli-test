@@ -7,12 +7,15 @@ import com.google.gson.JsonObject;
  */
 public class ConstantMessage {
 
-    public enum Pesan {
+    public enum Message {
         getSuccess,
         getFailed,
+        getFailedDeleteStillHasChildren,
+        getNotFound,
+        getOutOffStock,
         UNKNOWN;
 
-        public JsonObject pesan() {
+        public JsonObject message() {
             JsonObject resp = new JsonObject();
             switch (this) {
                 case getSuccess:
@@ -22,6 +25,18 @@ public class ConstantMessage {
                 case getFailed:
                     resp.addProperty("message", "Failed");
                     resp.addProperty("rc", "01");
+                    return resp;
+                case getNotFound:
+                    resp.addProperty("message", "Data not Found");
+                    resp.addProperty("rc", "02");
+                    return resp;
+                case getFailedDeleteStillHasChildren:
+                    resp.addProperty("message", "Cannot delete Parent with existing Children");
+                    resp.addProperty("rc", "03");
+                    return resp;
+                case getOutOffStock:
+                    resp.addProperty("message", "Item out off stock");
+                    resp.addProperty("rc", "04");
                     return resp;
                 default:
                     throw new AssertionError("Unknown operations " + this);

@@ -17,7 +17,7 @@ public class EntityItemResponse {
     private Long colourId;
     @Getter
     private Long stockId;
-    @Getter
+    @Getter @Setter
     private Long stock;
     @Getter
     private BigDecimal price;
