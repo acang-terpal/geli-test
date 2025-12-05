@@ -1,0 +1,619 @@
+{
+	"info": {
+		"_postman_id": "6f6697ec-9c25-4175-9d58-f08a4cf5a7d7",
+		"name": "GELI TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8517029"
+	},
+	"item": [
+		{
+			"name": "get all item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/getItem?page=0&size=5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"getItem"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get item by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/getItemById?itemId=4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"getItemById"
+					],
+					"query": [
+						{
+							"key": "itemId",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all colour",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/getColour?page=0&size=5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"getColour"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get colour by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/getColourById?colourId=4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"getColourById"
+					],
+					"query": [
+						{
+							"key": "colourId",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all size",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/getSize?page=0&size=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"getSize"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/getCart",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"getCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get size by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/getSizeById?sizeId=5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"getSizeById"
+					],
+					"query": [
+						{
+							"key": "sizeId",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all stock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/getStock?page=0&size=5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"getStock"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get stock by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/getStockById?stockId=5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"getStockById"
+					],
+					"query": [
+						{
+							"key": "stockId",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "colourId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "sizeId",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "stockId",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "louis vouton",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "1000000",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/createItem",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"createItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete item",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "itemId",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/deleteItem",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"deleteItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete colour",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "colourId",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/deleteColour",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"deleteColour"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete size",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sizeId",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/deleteSize",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"deleteSize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete stock",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "stockId",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/deleteStock",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"deleteStock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "itemId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "colourId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "sizeId",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "stockId",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "louis vouton update",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "2000000",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/updateItem",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"updateItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create  colour",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "value",
+							"value": "blue",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/createColour",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"createColour"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create  size",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "value",
+							"value": "XXL",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/createSize",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"createSize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "itemId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/addCart",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"addCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payment cart",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "itemId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/payCart",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"payCart"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
