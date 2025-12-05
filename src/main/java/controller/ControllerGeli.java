@@ -1,8 +1,10 @@
 package controller;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import configuration.DependencyConfig;
 import constant.ConstantMessage;
+import entity.EntityItem;
 import helper.Helper;
 import jakarta.servlet.http.HttpServletRequest;
 import net.sf.ehcache.Cache;
@@ -17,6 +19,8 @@ import service.GeliItemService;
 
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author hasan
@@ -55,6 +59,20 @@ public class ControllerGeli {
         jObjResponse.addProperty("rc", "01");
         jObjResponse.addProperty("message", "Failed");
         try {
+            List<Map<String, Object>> listItem = this.geliItemService.getItem(objParams);
+            JsonArray jArrItem = new JsonArray();
+            for(int i = 0 ; i < listItem.size(); i++){
+                JsonObject jsonObjItem = new JsonObject();
+                Map<String, Object> entityItem = (Map<String, Object>) listItem.get(i);
+                jsonObjItem.addProperty("name", entityItem.get("name").toString());
+                jsonObjItem.addProperty("price", entityItem.get("price").toString());
+                jsonObjItem.addProperty("stock", entityItem.get("stock").toString());
+                jsonObjItem.addProperty("size", entityItem.get("size").toString());
+                jsonObjItem.addProperty("colour", entityItem.get("colour").toString());
+                jsonObjItem.addProperty("unit", entityItem.get("unit").toString());
+                jArrItem.add(jsonObjItem);
+            }
+            jObjResponse.add("data", jArrItem);
             jObjResponse.addProperty("rc", "00");
             jObjResponse.addProperty("message", "success");
             HttpHeaders headers = new HttpHeaders();

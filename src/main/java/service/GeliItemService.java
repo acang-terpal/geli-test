@@ -9,6 +9,7 @@ import repository.GeliItemRepo;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class GeliItemService {
@@ -22,14 +23,9 @@ public class GeliItemService {
         this.helper = helper;
     }
 
-    public List<Object>  getAccount(HashMap<String, Object> objParams) {
-        List<EntityItem> entityItems = geliItemRepo.getAccount(objParams.get("login_username").toString(), objParams.get("account_password").toString());
-        List  result = new ArrayList();
-        if(entityItems.size() > 0) {
-            HashMap<String, Object> mapAccount = (HashMap<String, Object>) this.helper.convertObjectToMap(entityItems.get(0));
-            result.add(mapAccount);
-        }
-        return result;
+    public List<Map<String, Object>>  getItem(HashMap<String, Object> objParams) {
+        List<Map<String, Object>> entityItems = geliItemRepo.getItem(objParams.get("limit").toString(), objParams.get("offset").toString());
+        return entityItems;
     }
 
 }

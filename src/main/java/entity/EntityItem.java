@@ -37,4 +37,16 @@ public class EntityItem {
     @Getter @Setter
     @Column(name = "price", nullable = false)
     private BigDecimal price;
+
+    @ManyToOne
+    @JoinColumn(name = "colour_id", referencedColumnName = "colour_id", insertable = false, updatable = false)
+    private EntityColour entityColour;
+
+    @ManyToOne
+    @JoinColumn(name = "size_id", referencedColumnName = "size_id", insertable = false, updatable = false)
+    private EntitySize entitySize;
+
+    @ManyToOne
+    @JoinColumn(name = "stock_id", referencedColumnName = "stock_id", insertable = false, updatable = false)
+    private EntityStock entityStock;
 }
