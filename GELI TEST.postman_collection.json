@@ -1,11 +1,156 @@
 {
 	"info": {
-		"_postman_id": "6f6697ec-9c25-4175-9d58-f08a4cf5a7d7",
+		"_postman_id": "348343a2-39e7-4f71-bdfc-9181d4e1f173",
 		"name": "GELI TEST",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "8517029"
 	},
 	"item": [
+		{
+			"name": "create item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "colourId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "sizeId",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "stockId",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "louis vouton",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "1000000",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/createItem",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"createItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create  size",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "value",
+							"value": "XXL",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/createSize",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"createSize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create stock",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "value",
+							"value": "pack (50 pcs)",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/createStock",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"createStock"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create  colour",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "value",
+							"value": "blue",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/createColour",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"createColour"
+					]
+				}
+			},
+			"response": []
+		},
 		{
 			"name": "get all item",
 			"request": {
@@ -149,26 +294,6 @@
 			"response": []
 		},
 		{
-			"name": "get all cart",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/geli/ControllerGeli/getCart",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"geli",
-						"ControllerGeli",
-						"getCart"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "get size by id",
 			"request": {
 				"method": "GET",
@@ -245,61 +370,6 @@
 							"key": "stockId",
 							"value": "5"
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "create item",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "colourId",
-							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "sizeId",
-							"value": "2",
-							"type": "text"
-						},
-						{
-							"key": "stockId",
-							"value": "3",
-							"type": "text"
-						},
-						{
-							"key": "name",
-							"value": "louis vouton",
-							"type": "text"
-						},
-						{
-							"key": "price",
-							"value": "1000000",
-							"type": "text"
-						},
-						{
-							"key": "stock",
-							"value": "123",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "localhost:8080/geli/ControllerGeli/createItem",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"geli",
-						"ControllerGeli",
-						"createItem"
 					]
 				}
 			},
@@ -486,13 +556,18 @@
 			"response": []
 		},
 		{
-			"name": "create  colour",
+			"name": "update colour",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "formdata",
 					"formdata": [
+						{
+							"key": "colourId",
+							"value": "1",
+							"type": "text"
+						},
 						{
 							"key": "value",
 							"value": "blue",
@@ -501,7 +576,7 @@
 					]
 				},
 				"url": {
-					"raw": "localhost:8080/geli/ControllerGeli/createColour",
+					"raw": "localhost:8080/geli/ControllerGeli/updateItem",
 					"host": [
 						"localhost"
 					],
@@ -509,14 +584,14 @@
 					"path": [
 						"geli",
 						"ControllerGeli",
-						"createColour"
+						"updateItem"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "create  size",
+			"name": "update size",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -524,14 +599,19 @@
 					"mode": "formdata",
 					"formdata": [
 						{
+							"key": "sizeId",
+							"value": "2",
+							"type": "text"
+						},
+						{
 							"key": "value",
-							"value": "XXL",
+							"value": "XM",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "localhost:8080/geli/ControllerGeli/createSize",
+					"raw": "localhost:8080/geli/ControllerGeli/updateItem",
 					"host": [
 						"localhost"
 					],
@@ -539,7 +619,42 @@
 					"path": [
 						"geli",
 						"ControllerGeli",
-						"createSize"
+						"updateItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update stock",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "stockId",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "value",
+							"value": "pcs (100)",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/updateItem",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"updateItem"
 					]
 				}
 			},
@@ -575,6 +690,26 @@
 						"geli",
 						"ControllerGeli",
 						"addCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/geli/ControllerGeli/getCart",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"geli",
+						"ControllerGeli",
+						"getCart"
 					]
 				}
 			},

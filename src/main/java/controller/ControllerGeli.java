@@ -509,7 +509,7 @@ public class ControllerGeli {
                 this.response = new ResponseEntity<>(jObjResponse.toString().getBytes(StandardCharsets.UTF_8), this.headers, HttpStatus.OK);
             }
         } catch (Exception ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
         }
         return this.response;
     }
@@ -537,7 +537,7 @@ public class ControllerGeli {
                 this.response = new ResponseEntity<>(jObjResponse.toString().getBytes(StandardCharsets.UTF_8), this.headers, HttpStatus.OK);
             }
         } catch (Exception ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
         }
         return this.response;
     }

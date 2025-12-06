@@ -22,7 +22,7 @@ public class EntityColour {
     @Column(name = "value", nullable = false)
     private String value;
 
-    @OneToMany(mappedBy = "colourId")
+    @OneToMany(mappedBy = "colourId", cascade = CascadeType.REMOVE)
     private List<EntityItem> entityItemSet = new ArrayList<>();
 
     @PreRemove

@@ -61,7 +61,7 @@ url path
   <br>for payment cart
 
 how to configure
-- make sure workdir on application.properties is right with jar file path
+- make sure workdir on application.properties is set with jar file path
 - change http.port if needed
 
 how to compile

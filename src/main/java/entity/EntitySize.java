@@ -22,7 +22,7 @@ public class EntitySize {
     @Column(name = "value", nullable = false)
     private String value;
 
-    @OneToMany(mappedBy = "sizeId")
+    @OneToMany(mappedBy = "sizeId", cascade = CascadeType.REMOVE)
     private List<EntityItem> entityItemSet = new ArrayList<>();
 
     @PreRemove
