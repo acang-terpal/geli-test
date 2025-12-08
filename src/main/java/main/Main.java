@@ -1,5 +1,6 @@
 package main;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,6 +9,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.ConfigurableEnvironment;
+import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.net.URL;
@@ -24,9 +26,6 @@ import java.util.HashMap;
 @EnableJpaRepositories(basePackages = "repository")
 @EntityScan("entity")
 public class Main {
-    public static String workDir;
-    @Value("${http.port}")
-    private static String httpPort;
 
     public static void main(String[] args) throws Exception {
         //---------------------------springboot-------------------------------------

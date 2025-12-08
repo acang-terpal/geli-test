@@ -63,7 +63,7 @@ url path
 
 how to configure
 - make sure workdir on application.properties is set with jar file path
-- change http.port if needed
+- change server.port if needed to change service port listening
 
 how to compile
 - run command "mvn clean package"
