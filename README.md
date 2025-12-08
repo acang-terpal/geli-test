@@ -4,9 +4,10 @@ technologi stack:
 - cache (ehcache) for cart purpose
 - jpa persistent with JPQL
 - MVC design with router class
+- using TransactionalPayment class with synchronized methode to make sure, deduct stock not enter in race condition
 
 ![Database ERD](img/ERDDiagram.png "Database ERD")
-<br>has 3 table :
+<br>has 4 table :
 - stock, this is stock category
 - colour, for colour varian category
 - size, for size varian category
